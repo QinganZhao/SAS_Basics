@@ -11,7 +11,7 @@
 /* var_a,var_b,var_c */
 /* 1,2,3 */
 /* 4,5,6 */
-PROC IMPORT DATAFILE='/folders/myfolders/test.csv'
+PROC IMPORT DATAFILE='/folders/myfolders/SAS_Basics/data/test.csv'
 	DBMS=CSV
 	OUT=WORK.DAT_1;
 	GETNAMES=YES;
@@ -58,22 +58,11 @@ QUIT;
 
 
 
-/* Use SAS Syntax to manipulate data */
-/* IF THEN...ELSE */
-DATA DAT_1;
-	SET DAT_1; /* SET will mke a copy of the existing data. */
-	
-	IF var_a=1 
-	THEN var_a = SQRT(var_c);
-	ELSE var_a=var_c**2;
-RUN;
-
-
 
 /* Export data into Excel file */
 PROC EXPORT data=WORK.DAT_2
    OUTFILE="/folders/myfolders/DAT_2.xlsx"
-   DBMS=xlsx;
+   DBMS=xlsx REPLACE;
 RUN;
 
 
