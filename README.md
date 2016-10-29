@@ -10,6 +10,7 @@ The basics of SAS language.
 - Export data into Excel file
 - Create library to save data permanantly
 - Print data
+- Drop variable(s) from a data set
 - Delete a data set with *PROC DELETE* or *PROC SQL*
 
 
@@ -19,3 +20,13 @@ The basics of SAS language.
 - IF-THEN-ELSE Statement
 - DO blocks
 - DO loop
+
+
+### c. Operators
+- Add
+- Add together with IF statement
+- More complicated calculation
+- Concatenate strings
+- Logical Operator
+- Use Operator to Filter Observations
+- "IN" operator (set operator)

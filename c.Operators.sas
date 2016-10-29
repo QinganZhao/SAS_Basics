@@ -25,7 +25,7 @@ DATA DAT;
 RUN;
 
 
-/* We found the weighing machine is not working properly, and it overestimates the weight by 1 kg */
+/* We found the weighing machine is not working properly, and it overestimates the weight by 1 kg*/
 /* Hence we need to add 1 to each value of "weight" variable. */
 DATA DAT;
 SET DAT;
@@ -33,6 +33,14 @@ weight = weight + 1;
 RUN;
 
 
+/* Additionally, the stadio meter is not working properly either, and it overestimates the height by 3 CM ONLY for males*/
+/* Hence we need to add 3 to each value of "height" variable, but only for males. */
+DATA DAT;
+SET DAT;
+IF gender = "M" 
+THEN
+height = height + 3;
+RUN;
 
 
 /* Calculate the BMI */
@@ -43,13 +51,33 @@ RUN;
 
 
 
-
 /* Concatenate String */
 DATA DAT;
 SET DAT;
 weight_kg = weight || "kg";
 RUN;
 
+
+
+/* Create Binary Variable Using Logical Operator "=" */
+DATA DAT;
+SET DAT;
+IF_MALE = (gender = "F");  /* can also be 'IF_MALE = (gender eq "F")';*/ 
+RUN;
+
+
+/* Use "AND" to Combine Multiple Logical Operator*/
+DATA DAT;
+SET DAT;
+IF_MALE_AND_HIGH = (gender = "M") AND (height >= 170);
+RUN;
+
+
+/* Use "OR" to Combine Multiple Logical Operator*/
+DATA DAT;
+SET DAT;
+IF_EXTREMELY_HIGH_OR_HEAVY = (height >=180) OR (weight >= 80);
+RUN;
 
 
 
@@ -72,3 +100,9 @@ DATA DAT_SPECIAL;
 SET DAT;
 IF id in (1, 3, 5);
 RUN;
+
+
+
+
+
+

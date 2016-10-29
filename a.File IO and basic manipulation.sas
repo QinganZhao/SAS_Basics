@@ -79,7 +79,14 @@ RUN;
 
 
 /* Print data */
-PROC PRINT DATA=TEST_LIB.DAT_3;
+PROC PRINT DATA=DAT_1;
+RUN;
+
+
+/* Drop variable(s) */
+DATA DAT_1;
+SET DAT_1;
+DROP var_a var_b;
 RUN;
 
 
