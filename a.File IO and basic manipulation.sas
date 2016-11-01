@@ -84,11 +84,27 @@ RUN;
 
 
 /* Drop variable(s) */
+/* Method - 1 */
 DATA DAT_1;
 SET DAT_1;
 DROP var_a var_b;
 RUN;
 
+/* Method - 2 */
+DATA DAT_2;
+SET DAT_2 (drop=r1 r2);
+RUN;
+
+/* If we use method-1, the variables we drop are still available. They will only be removed at the end of the DATA step; */
+/* If we use method-2, the variables we drop will not be copied into new data set. This method will be faster. */
+
+
+/* KEEP Statement */
+/* KEEP is complementary to DROP statement. Only the variables listed after KEEP will be copied into new data set */
+
+DATA DAT_2;
+SET DAT_2 (KEEP=id sex);
+RUN;
 
 
 /* Delete a table */

@@ -2,7 +2,7 @@
 The basics of SAS language.
 
 
-### a.File IO and basic manipulation
+### a. File IO and basic manipulation
 
 - Import data from CSV file
 - Create a data set with *DATALINES*
@@ -11,6 +11,7 @@ The basics of SAS language.
 - Create library to save data permanantly
 - Print data
 - Drop variable(s) from a data set
+- KEEP Statement
 - Delete a data set with *PROC DELETE* or *PROC SQL*
 
 
@@ -30,3 +31,8 @@ The basics of SAS language.
 - Logical Operator
 - Use Operator to Filter Observations
 - "IN" operator (set operator)
+
+### d. Mathematical Functions
+- **log**, **exp**, and **sqrt**
+- Trigonometric functions
+- Generate Random Numbers
