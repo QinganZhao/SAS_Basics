@@ -1,3 +1,7 @@
+/* REFERENCE:
+   [1] http://stackoverflow.com/questions/7402327/macro-returning-a-value
+*/
+
 PROC FCMP outlib=work.funcs.test;
 	/* In the function below, if action equals to 0, we return -x*2; otherwise we return x*2 */
 	function test(x, action);
